@@ -27,6 +27,7 @@ No test framework is configured yet.
 
 - /docs/ui.md
 - /docs/data-fetching.md
+- /docs/data-mutations.md
 
 ## Architecture
 
