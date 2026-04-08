@@ -21,6 +21,15 @@ No test framework is configured yet.
 - **Tailwind CSS v4** (configured via `@tailwindcss/postcss`)
 - Fonts: Geist Sans and Geist Mono via `next/font/google`
 
+## Documentation
+
+**IMPORTANT:** Before generating any code, always check the `/docs` directory for relevant documentation files. Read and follow any applicable docs before writing or modifying code. The `/docs` directory is the source of truth for implementation guidance, conventions, and feature specs in this project.
+
+- /docs/ui.md
+- /docs/data-fetching.md
+- /docs/data-mutations.md
+- /docs/auth.md
+
 ## Architecture
 
 This is a fresh Next.js App Router project. The entry point is `src/app/page.tsx`. The root layout (`src/app/layout.tsx`) wraps all pages and sets up global fonts and metadata.
