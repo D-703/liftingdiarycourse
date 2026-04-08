@@ -1,7 +1,7 @@
 import { format } from "date-fns"
 import { auth } from "@clerk/nextjs/server"
 import { redirect } from "next/navigation"
-import { Dumbbell, Plus } from "lucide-react"
+import { Dumbbell, Plus, Pencil } from "lucide-react"
 import Link from "next/link"
 
 import {
@@ -82,12 +82,20 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
                     </div>
                     <CardTitle className="text-base text-zinc-800">{workout.name}</CardTitle>
                   </div>
-                  <span className="text-xs text-zinc-500 shrink-0">
-                    {format(workout.startedAt, "h:mm a")}
-                    {workout.completedAt && (
-                      <> – {format(workout.completedAt, "h:mm a")}</>
-                    )}
-                  </span>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="text-xs text-zinc-500">
+                      {format(workout.startedAt, "h:mm a")}
+                      {workout.completedAt && (
+                        <> – {format(workout.completedAt, "h:mm a")}</>
+                      )}
+                    </span>
+                    <Button asChild size="icon" variant="ghost" className="size-7 text-zinc-400 hover:text-zinc-700">
+                      <Link href={`/dashboard/workout/${workout.id}`}>
+                        <Pencil className="size-3.5" />
+                        <span className="sr-only">Edit workout</span>
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
                 {workout.notes && (
                   <CardDescription className="mt-2 pl-10 text-zinc-500">{workout.notes}</CardDescription>
